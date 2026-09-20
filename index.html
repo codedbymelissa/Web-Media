@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Melissa Grix's WEBD-350 Class Assignment Website</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">WEB 350</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#week2">Week 2</a></li>
+                <li><a href="#week3">Week 3</a></li>
+                <li><a href="#week4">Week 4</a></li>
+                <li class="disabled"><a href="#week5">Week 5</a></li>
+                <li class="disabled"><a href="#week6">Week 6</a></li>
+                <li class="disabled"><a href="#final">Final</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Week 1-->
+<div class="jumbotron" id="week1">
+    <div class="container">
+        <h1>Melissa Grix</h1>
+        <p>Welcome to my WEB 350 class assignment page!</p>
+    </div>
+</div>
+
+<div class="container week2" id="week2">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Week 2: Media Queries and Bootstrap Grid</h2>
+
+            <div id="deviceAlert" class="alert alert-info">
+                Checking device...
+            </div>
+        </div>
+    </div>
+
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-6 col-lg-3">
+            <img src="images/golden.jpg" class="img-responsive" alt="golden retriever">
+                <p>Image source: Wikipedia</p>
+            </div>
+            
+            <div class="col-xs-12 col-sm-6 col-lg-3">
+            <img src="images/cattledog.jpg" class="img-responsive" alt="aussie cattle dog">
+                <p>Image source: Wikipedia</p>
+            </div>
+            
+            <div class="col-xs-12 col-sm-6 col-lg-3">
+            <img src="images/kingcharles.jpg" class="img-responsive" alt="king charles spaniel">
+                <p>Image source: Wikipedia</p>
+            </div>
+            
+            <div class="col-xs-12 col-sm-6 col-lg-3">
+            <img src="images/pitty.jpg" class="img-responsive" alt="pitbull">
+                <p>Image source: Wikipedia</p>
+             </div>
+         </div>
+</div>
+   <!-- Week 3 -->
+<div class="container week3" id="week3"> 
+    <div class="row">
+        <div class="col-xs-12 text-center">
+
+            <h2>Week 3: Wake the Corgi!</h2>
+            <p>Click the sleeping Corgi to wake it up!</p>
+
+            <div id="corgiScene"> <!-- holds the Corgi images and message -->
+
+
+                <img id="corgiSleep" 
+                     src="images/corgisleep.jpeg"
+                     alt="Sleeping Corgi"> <!-- sleeping corgi image -->
+
+                <img id="corgiAwake"
+                     src="images/corgiawake.jpg"
+                     alt="Awake Corgi"> <!-- awake corgi image -->
+
+                <div id="corgiMessage">Zzz...</div>
+            </div>
+
+            <button id="wakeCorgi" class="btn btn-primary">
+                Wake the Corgi
+            </button>
+        </div>
+    </div>
+ </div>
+
+    <!-- Week 4 -->
+<div class="container week4" id="week4">
+        
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Week 4: Apple Tree SVG and CSS3 Animation</h2>
+        </div>
+    </div>
+
+    <div class="row">
+
+    <div class="col-xs-12 col-sm-6 col-sm-push-6">
+        <div class="svg-box">
+            <svg id="tree-illustration" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:c2pa="http://c2pa.org/manifest">
+                <!-- Trunk -->
+                 <rect id="trunk" x="185" y="240" width="30" height="120" rx="6" fill="#7a4a2b"/>
+
+                 <!-- Leaves -->
+                  <circle id="leaves" cx="200" cy="180" r="90" fill="#5cae62"/>
+
+                  <!-- Apples -->
+
+                  <circle id="apple-1" cx="150" cy="150" r="10" fill="#c8402b"/>
+                  <circle id="apple-2" cx="250" cy="160" r="10" fill="#c8402b"/>
+                  <circle id="apple-3" cx="200" cy="220" r="10" fill="#c8402b"/>
+                  <circle id="apple-4" cx="165" cy="220" r="10" fill="#c8402b"/>
+                  <circle id="apple-5" cx="235" cy="120" r="10" fill="#c8402b"/>
+            </svg>
+        </div>
+     </div>
+
+    <div class="col-xs-12 col-sm-6 col-sm-pull-6">
+        <div class="controls-box">
+            <h3>Apply a CSS3 Effect!</h3>
+            <br>
+
+            <button id="apple1Button" class="btn btn-primary">Animate Apple 1</button>
+
+            <button id="apple2Button" class="btn btn-primary">Animate Apple 2</button>
+
+            <button id="apple3Button" class="btn btn-primary">Animate Apple 3</button>
+
+            <button id="apple4Button" class="btn btn-primary">Animate Apple 4</button>
+
+            <button id="apple5Button" class="btn btn-primary">Animate Apple 5</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
