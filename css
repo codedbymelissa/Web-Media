@@ -1,0 +1,160 @@
+html {
+    scroll-padding-top: 70px;
+}
+
+body {
+    background-color: #fff8f0;
+    color: #4a3728;
+    font-family: "Montserrat", sans-serif;
+    padding-top: 50px;
+}
+
+.jumbotron {
+    background-color: #fff8f0;
+    color: #4a3728;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Lora", serif;
+    color: #6b4226;
+}
+
+.week2 {
+    padding-top: 40px;
+}
+
+.week2-images > div {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+
+.week2-images img {
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .week2-images img {
+        height: 175px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .week2-images img {
+        height: 200px;
+    }
+}
+
+.week3 {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+#corgiScene { /* box that holds both Corgi images */
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    margin: 30px auto;
+    overflow: hidden;
+    border: 4px solid #8b5e3c;
+    border-radius: 20px;
+}
+
+#corgiSleep,
+#corgiAwake { /* both mages fill the entire scene */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    left: 0;
+    top: 0;
+}
+
+#corgiSleep {
+    z-index: 2;
+}
+
+#corgiAwake {
+    z-index: 1;
+    opacity: 0;
+}
+
+#corgiMessage { /* message that appears above the Corgi */
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    z-index: 3;
+}
+
+#wakeCorgi {
+    margin-top: 10px;
+    font-size: 18px;
+    padding: 10px 25px;
+    background-color: #d98b45;
+    color: white;
+    border: 2px solid #8b5e3c;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#wakeCorgi:hover {
+    background-color: #b96f32;
+}
+
+.week4 {
+    padding-top: 40px;
+}
+
+.svg-box {
+    background-color: #cfe8ff;
+    padding: 20px;
+    height: 400px;
+}
+
+.controls-box {
+    background-color: #cfe8ff;
+    padding: 20px;
+    height: 400px;
+}
+
+.controls-box button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#tree-illustration {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+#apple-1,
+#apple-2,
+#apple-3,
+#apple-4,
+#apple-5 {
+    animation-duration: 1.5s;
+}
+
+#apple-1:hover,
+#apple-2:hover,
+#apple-3:hover,
+#apple-4:hover,
+#apple-5:hover {
+    fill: lightgreen;
+    cursor: pointer;
+}
