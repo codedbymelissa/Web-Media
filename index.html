@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Three interactive web media demos: responsive design with media queries and the Bootstrap grid, JavaScript interaction, and SVG with CSS3 animation.">
+  <title>Web Media Showcase | Melissa Grix</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="#top">Web Media Showcase</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navLinks">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#responsive">Responsive design</a></li>
+        <li class="nav-item"><a class="nav-link" href="#interaction">JavaScript interaction</a></li>
+        <li class="nav-item"><a class="nav-link" href="#animation">SVG and animation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container">
+    <h1>Web Media Showcase</h1>
+    <p class="lead">Three small projects that show how I build responsive layouts, interactive pages, and animated graphics with HTML, CSS, and JavaScript.</p>
+    <p class="mb-0">By Melissa Grix. <a href="https://codedbymelissa.github.io">Back to my resume site</a></p>
+  </div>
+</header>
+
+<main>
+  <!-- Responsive design -->
+  <section id="responsive">
+    <div class="container">
+      <h2>Responsive design</h2>
+      <p class="intro">A photo grid that changes from one column on phones to four on large screens, and a message that reports which layout you are seeing. Resize your browser window to try it.</p>
+
+      <div class="alert alert-device" id="deviceAlert" role="status">Checking your screen size...</div>
+
+      <!-- TODO: add each photographer's name and license from the Wikipedia image page -->
+      <div class="row g-4 photo-grid">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <figure>
+            <img src="images/golden.jpg" class="img-fluid" alt="Golden retriever">
+            <figcaption><strong>Golden retriever</strong>Source: Wikipedia</figcaption>
+          </figure>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <figure>
+            <img src="images/cattledog.jpg" class="img-fluid" alt="Australian cattle dog">
+            <figcaption><strong>Australian cattle dog</strong>Source: Wikipedia</figcaption>
+          </figure>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <figure>
+            <img src="images/kingcharles.jpg" class="img-fluid" alt="Cavalier King Charles spaniel">
+            <figcaption><strong>King Charles spaniel</strong>Source: Wikipedia</figcaption>
+          </figure>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <figure>
+            <img src="images/pitty.jpg" class="img-fluid" alt="Pit bull terrier">
+            <figcaption><strong>Pit bull</strong>Source: Wikipedia</figcaption>
+          </figure>
+        </div>
+      </div>
+      <p class="built-with">Built with: Bootstrap grid, CSS media queries, JavaScript <code>resize</code> event</p>
+    </div>
+  </section>
+
+  <!-- JavaScript interaction -->
+  <section id="interaction">
+    <div class="container text-center">
+      <h2>JavaScript interaction</h2>
+      <p class="intro mx-auto">Click the photo or the button to wake the corgi. The fade and pop-up are made with the Web Animations API, and the button toggles the scene back.</p>
+
+      <div id="corgiScene">
+        <img id="corgiSleep" src="images/corgisleep.jpeg" alt="Sleeping corgi">
+        <img id="corgiAwake" src="images/corgiawake.jpg" alt="Awake corgi">
+        <div id="corgiMessage" aria-live="polite">Zzz...</div>
+      </div>
+
+      <button id="wakeCorgi" class="btn btn-brown btn-lg" type="button">Wake the corgi</button>
+      <p class="built-with">Built with: JavaScript DOM events, Web Animations API, async/await</p>
+    </div>
+  </section>
+
+  <!-- SVG and animation -->
+  <section id="animation">
+    <div class="container">
+      <h2>SVG and animation</h2>
+      <p class="intro">An apple tree drawn in SVG. Each button applies a different CSS3 animation to one apple using animate.css.</p>
+
+      <div class="row g-4 align-items-stretch">
+        <div class="col-12 col-md-6 order-md-2">
+          <div class="panel">
+            <svg id="tree-illustration" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Apple tree with five apples">
+              <rect x="185" y="240" width="30" height="120" rx="6" fill="#7a4a2b"/>
+              <circle cx="200" cy="180" r="90" fill="#5cae62"/>
+              <circle id="apple-1" cx="150" cy="150" r="10" fill="#c8402b"/>
+              <circle id="apple-2" cx="250" cy="160" r="10" fill="#c8402b"/>
+              <circle id="apple-3" cx="200" cy="220" r="10" fill="#c8402b"/>
+              <circle id="apple-4" cx="165" cy="220" r="10" fill="#c8402b"/>
+              <circle id="apple-5" cx="235" cy="120" r="10" fill="#c8402b"/>
+            </svg>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 order-md-1">
+          <div class="panel">
+            <h3>Choose an apple</h3>
+            <div class="d-grid gap-2">
+              <button class="btn btn-brown" type="button" data-apple="apple-1" data-effect="fadeOutDown">Apple 1: fall</button>
+              <button class="btn btn-brown" type="button" data-apple="apple-2" data-effect="bounce">Apple 2: bounce</button>
+              <button class="btn btn-brown" type="button" data-apple="apple-3" data-effect="rotateIn">Apple 3: spin</button>
+              <button class="btn btn-brown" type="button" data-apple="apple-4" data-effect="bounce">Apple 4: bounce</button>
+              <button class="btn btn-brown" type="button" data-apple="apple-5" data-effect="fadeOutDown">Apple 5: fall</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="built-with">Built with: inline SVG, CSS3 animation (animate.css), JavaScript class toggling</p>
+    </div>
+  </section>
+</main>
+
+<footer class="text-center py-4">
+  <p class="mb-0">&copy; <span id="year">2026</span> Melissa Grix. <a href="https://codedbymelissa.github.io">codedbymelissa.github.io</a></p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
