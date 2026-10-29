@@ -140,19 +140,6 @@ section {
   pointer-events: none;
 }
 
-#liftMessage {
-  position: absolute;
-  top: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  padding: 0.6rem 1.5rem;
-  border-radius: 0.25rem;
-  background: var(--iron-dark);
-  color: #fff;
-  font-weight: 600;
-}
-
 .panel {
   height: 100%;
   padding: 1.5rem;
