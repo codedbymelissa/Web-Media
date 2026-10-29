@@ -12,7 +12,7 @@ document.querySelectorAll("#navLinks .nav-link").forEach((link) => {
   });
 });
 
-// 3. Report which layout the visitor is seeing (matches Bootstrap's breakpoints)
+// 3. Report which layout the lifter is seeing (matches Bootstrap's breakpoints)
 const deviceAlert = document.getElementById("deviceAlert");
 
 function checkDevice() {
@@ -22,48 +22,50 @@ function checkDevice() {
   if (width < 768) device = "phone";
   else if (width < 992) device = "tablet";
 
-  deviceAlert.textContent = `Your window is ${width}px wide, so you are seeing the ${device} layout.`;
+  deviceAlert.textContent = `Your window is ${width}px wide, so you're seeing the ${device} layout. Train anywhere, track anywhere.`;
 }
 
 checkDevice();
 window.addEventListener("resize", checkDevice);
 
-// 4. Wake the corgi (Web Animations API)
-const corgiSleep = document.getElementById("corgiSleep");
-const corgiAwake = document.getElementById("corgiAwake");
-const corgiMessage = document.getElementById("corgiMessage");
-const wakeButton = document.getElementById("wakeCorgi");
+// 4. Lift the bar (Web Animations API)
+const barRacked = document.getElementById("barRacked");   // bar resting on the rack
+const barLifted = document.getElementById("barLifted");   // lifter locked out overhead
+const liftMessage = document.getElementById("liftMessage");
+const liftButton = document.getElementById("liftBar");
 
-let isAwake = false;
+let isLifted = false;
 let isBusy = false; // blocks clicks while an animation is running
 
-async function toggleCorgi() {
+async function toggleLift() {
   if (isBusy) return;
   isBusy = true;
 
-  if (isAwake) {
-    // back to sleep: clear the animations and restore the starting state
-    [corgiSleep, corgiAwake].forEach((img) => img.getAnimations().forEach((a) => a.cancel()));
-    corgiSleep.style.opacity = "1";
-    corgiAwake.style.opacity = "0";
-    corgiMessage.textContent = "Zzz...";
-    wakeButton.textContent = "Wake the corgi";
-    isAwake = false;
+  if (isLifted) {
+    // re-rack: clear the animations and restore the starting state
+    [barRacked, barLifted].forEach((img) => img.getAnimations().forEach((a) => a.cancel()));
+    barRacked.style.opacity = "1";
+    barLifted.style.opacity = "0";
+    liftMessage.textContent = "Bar is loaded. Chalk up...";
+    liftButton.textContent = "Lift the bar";
+    isLifted = false;
     isBusy = false;
     return;
   }
 
-  corgiMessage.textContent = "I'm awake!";
+  liftMessage.textContent = "Squat... drive... lockout!";
 
-  await corgiSleep.animate(
+  // fade out the racked bar
+  await barRacked.animate(
     [{ opacity: 1 }, { opacity: 0 }],
     { duration: 700, easing: "ease-in-out", fill: "forwards" }
   ).finished;
 
-  corgiAwake.style.opacity = "1";
-  wakeButton.textContent = "Back to sleep";
+  barLifted.style.opacity = "1";
+  liftButton.textContent = "Re-rack";
 
-  await corgiAwake.animate(
+  // the press: rise from the bottom with a little overshoot at lockout
+  await barLifted.animate(
     [
       { transform: "scale(0.8) translateY(50px)", opacity: 0 },
       { transform: "scale(1.05) translateY(-15px)", opacity: 1 },
@@ -72,20 +74,21 @@ async function toggleCorgi() {
     { duration: 1000, easing: "ease-out" }
   ).finished;
 
-  isAwake = true;
+  liftMessage.textContent = "Good lift! Three white lights.";
+  isLifted = true;
   isBusy = false;
 }
 
-wakeButton.addEventListener("click", toggleCorgi);
-corgiSleep.addEventListener("click", toggleCorgi);
+liftButton.addEventListener("click", toggleLift);
+barRacked.addEventListener("click", toggleLift);
 
-// 5. Apple animations: each button names an apple and an animate.css effect
-document.querySelectorAll("[data-apple]").forEach((button) => {
+// 5. Plate animations: each button names a plate and an animate.css effect
+document.querySelectorAll("[data-plate]").forEach((button) => {
   button.addEventListener("click", () => {
-    const apple = document.getElementById(button.dataset.apple);
+    const plate = document.getElementById(button.dataset.plate);
     const classes = ["animate__animated", `animate__${button.dataset.effect}`];
 
-    apple.classList.add(...classes);
-    apple.addEventListener("animationend", () => apple.classList.remove(...classes), { once: true });
+    plate.classList.add(...classes);
+    plate.addEventListener("animationend", () => plate.classList.remove(...classes), { once: true });
   });
 });
