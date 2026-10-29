@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Three interactive web media demos: responsive design with media queries and the Bootstrap grid, JavaScript interaction, and SVG with CSS3 animation.">
-  <title>Web Media Showcase | Melissa Grix</title>
+  <meta name="description" content="Three interactive web media demos with a powerlifting theme: responsive design with media queries and the Bootstrap grid, JavaScript interaction, and SVG with CSS3 animation.">
+  <title>Powerlifting Web Media Showcase | Melissa Grix</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="mainNav">
   <div class="container">
-    <a class="navbar-brand" href="#top">Web Media Showcase</a>
+    <a class="navbar-brand" href="#top">Powerlifting Showcase</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -32,8 +32,8 @@
 
 <header class="hero" id="top">
   <div class="container">
-    <h1>Web Media Showcase</h1>
-    <p class="lead">Three small projects that show how I build responsive layouts, interactive pages, and animated graphics with HTML, CSS, and JavaScript.</p>
+    <h1>Powerlifting Web Media Showcase</h1>
+    <p class="lead">Three small projects that show how I build responsive layouts, interactive pages, and animated graphics with HTML, CSS, and JavaScript, all built around the squat, bench press, and deadlift.</p>
     <p class="mb-0">By Melissa Grix. <a href="https://codedbymelissa.github.io">Back to my resume site</a></p>
   </div>
 </header>
@@ -43,34 +43,34 @@
   <section id="responsive">
     <div class="container">
       <h2>Responsive design</h2>
-      <p class="intro">A photo grid that changes from one column on phones to four on large screens, and a message that reports which layout you are seeing. Resize your browser window to try it.</p>
+      <p class="intro">A grid of the three competition lifts plus the gear that goes with them. It changes from one column on phones to four on large screens, and a message reports which layout you are seeing. Resize your browser window to try it.</p>
 
       <div class="alert alert-device" id="deviceAlert" role="status">Checking your screen size...</div>
 
-      <!-- TODO: add each photographer's name and license from the Wikipedia image page -->
+      <!-- TODO: add each photographer's name and license from the image source -->
       <div class="row g-4 photo-grid">
         <div class="col-12 col-sm-6 col-lg-3">
           <figure>
-            <img src="images/golden.jpg" class="img-fluid" alt="Golden retriever">
-            <figcaption><strong>Golden retriever</strong>Source: Wikipedia</figcaption>
+            <img src="images/squat.jpg" class="img-fluid" alt="Lifter at the bottom of a barbell back squat">
+            <figcaption><strong>Squat</strong>Source: Wikimedia Commons</figcaption>
           </figure>
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <figure>
-            <img src="images/cattledog.jpg" class="img-fluid" alt="Australian cattle dog">
-            <figcaption><strong>Australian cattle dog</strong>Source: Wikipedia</figcaption>
+            <img src="images/bench.jpg" class="img-fluid" alt="Lifter pressing a barbell on the bench">
+            <figcaption><strong>Bench press</strong>Source: Wikimedia Commons</figcaption>
           </figure>
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <figure>
-            <img src="images/kingcharles.jpg" class="img-fluid" alt="Cavalier King Charles spaniel">
-            <figcaption><strong>King Charles spaniel</strong>Source: Wikipedia</figcaption>
+            <img src="images/deadlift.jpg" class="img-fluid" alt="Lifter pulling a loaded barbell off the floor">
+            <figcaption><strong>Deadlift</strong>Source: Wikimedia Commons</figcaption>
           </figure>
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <figure>
-            <img src="images/American_Pit_Bull_Terrier.jpg" class="img-fluid" alt="Pit bull terrier">
-            <figcaption><strong>Pit bull</strong>Source: Wikipedia</figcaption>
+            <img src="images/chalk-belt.jpg" class="img-fluid" alt="Lifting belt and chalk on a platform">
+            <figcaption><strong>Belt and chalk</strong>Source: Wikimedia Commons</figcaption>
           </figure>
         </div>
       </div>
@@ -82,15 +82,15 @@
   <section id="interaction">
     <div class="container text-center">
       <h2>JavaScript interaction</h2>
-      <p class="intro mx-auto">Click the photo or the button to wake the corgi. The fade and pop-up are made with the Web Animations API, and the button toggles the scene back.</p>
+      <p class="intro mx-auto">Click the photo or the button to lift the bar. The fade and the press to lockout are made with the Web Animations API, and the button re-racks the bar.</p>
 
-      <div id="corgiScene">
-        <img id="corgiSleep" src="images/corgisleep.jpeg" alt="Sleeping corgi">
-        <img id="corgiAwake" src="images/corgiawake.jpg" alt="Awake corgi">
-        <div id="corgiMessage" aria-live="polite">Zzz...</div>
+      <div id="liftScene">
+        <img id="barRacked" src="images/bar-racked.jpg" alt="Loaded barbell resting on the rack">
+        <img id="barLifted" src="images/bar-lifted.jpg" alt="Lifter at lockout with the bar overhead">
+        <div id="liftMessage" aria-live="polite">Bar is loaded. Chalk up...</div>
       </div>
 
-      <button id="wakeCorgi" class="btn btn-brown btn-lg" type="button">Wake the corgi</button>
+      <button id="liftBar" class="btn btn-red btn-lg" type="button">Lift the bar</button>
       <p class="built-with">Built with: JavaScript DOM events, Web Animations API, async/await</p>
     </div>
   </section>
@@ -99,31 +99,35 @@
   <section id="animation">
     <div class="container">
       <h2>SVG and animation</h2>
-      <p class="intro">An apple tree drawn in SVG. Each button applies a different CSS3 animation to one apple using animate.css.</p>
+      <p class="intro">A loaded barbell drawn in SVG. Each button applies a different CSS3 animation to one plate using animate.css.</p>
 
       <div class="row g-4 align-items-stretch">
         <div class="col-12 col-md-6 order-md-2">
           <div class="panel">
-            <svg id="tree-illustration" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Apple tree with five apples">
-              <rect x="185" y="240" width="30" height="120" rx="6" fill="#7a4a2b"/>
-              <circle cx="200" cy="180" r="90" fill="#5cae62"/>
-              <circle id="apple-1" cx="150" cy="150" r="10" fill="#c8402b"/>
-              <circle id="apple-2" cx="250" cy="160" r="10" fill="#c8402b"/>
-              <circle id="apple-3" cx="200" cy="220" r="10" fill="#c8402b"/>
-              <circle id="apple-4" cx="165" cy="220" r="10" fill="#c8402b"/>
-              <circle id="apple-5" cx="235" cy="120" r="10" fill="#c8402b"/>
+            <svg id="barbell-illustration" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Barbell loaded with three plates on each side">
+              <!-- bar -->
+              <rect x="20" y="193" width="360" height="14" rx="4" fill="#9aa0a6"/>
+              <!-- left sleeve: biggest plate inside, smallest outside -->
+              <rect id="plateSquat" x="108" y="110" width="22" height="180" rx="6" fill="#c8402b"/>
+              <rect id="plateBench" x="84" y="130" width="20" height="140" rx="6" fill="#2b6cc8"/>
+              <rect id="plateDeadlift" x="62" y="150" width="18" height="100" rx="6" fill="#e0b72b"/>
+              <!-- right sleeve: matching plates, not animated -->
+              <rect x="270" y="110" width="22" height="180" rx="6" fill="#c8402b"/>
+              <rect x="296" y="130" width="20" height="140" rx="6" fill="#2b6cc8"/>
+              <rect x="320" y="150" width="18" height="100" rx="6" fill="#e0b72b"/>
+              <!-- collars -->
+              <rect x="132" y="186" width="8" height="28" rx="2" fill="#333"/>
+              <rect x="260" y="186" width="8" height="28" rx="2" fill="#333"/>
             </svg>
           </div>
         </div>
         <div class="col-12 col-md-6 order-md-1">
           <div class="panel">
-            <h3>Choose an apple</h3>
+            <h3>Choose a plate</h3>
             <div class="d-grid gap-2">
-              <button class="btn btn-brown" type="button" data-apple="apple-1" data-effect="fadeOutDown">Apple 1: fall</button>
-              <button class="btn btn-brown" type="button" data-apple="apple-2" data-effect="bounce">Apple 2: bounce</button>
-              <button class="btn btn-brown" type="button" data-apple="apple-3" data-effect="rotateIn">Apple 3: spin</button>
-              <button class="btn btn-brown" type="button" data-apple="apple-4" data-effect="bounce">Apple 4: bounce</button>
-              <button class="btn btn-brown" type="button" data-apple="apple-5" data-effect="fadeOutDown">Apple 5: fall</button>
+              <button class="btn btn-red" type="button" data-plate="plateSquat" data-effect="bounce">Squat plate: bounce</button>
+              <button class="btn btn-red" type="button" data-plate="plateBench" data-effect="pulse">Bench plate: pulse</button>
+              <button class="btn btn-red" type="button" data-plate="plateDeadlift" data-effect="shakeX">Deadlift plate: shake</button>
             </div>
           </div>
         </div>
