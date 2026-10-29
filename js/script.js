@@ -28,7 +28,7 @@ function checkDevice() {
 checkDevice();
 window.addEventListener("resize", checkDevice);
 
-/ 4. Pull the bar (Web Animations API)
+// 4. Pull the bar (Web Animations API)
 const liftSetup = document.getElementById("liftSetup");   // lifter setting up over the bar
 const liftPull = document.getElementById("liftPull");     // lifter pulling the bar off the floor
 const liftMessage = document.getElementById("liftMessage");
