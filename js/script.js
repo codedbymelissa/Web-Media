@@ -28,43 +28,41 @@ function checkDevice() {
 checkDevice();
 window.addEventListener("resize", checkDevice);
 
-// 4. Pull the bar (Web Animations API)
-const liftSetup = document.getElementById("liftSetup");   // lifter setting up over the bar
-const liftPull = document.getElementById("liftPull");     // lifter pulling the bar off the floor
-const liftMessage = document.getElementById("liftMessage");
+
+const liftSetup = document.getElementById("liftSetup");
+const liftPull = document.getElementById("liftPull");
 const liftButton = document.getElementById("liftBar");
- 
+
 let isPulled = false;
-let isBusy = false; // blocks clicks while an animation is running
- 
+let isBusy = false; 
+
 async function toggleLift() {
   if (isBusy) return;
   isBusy = true;
- 
+
   if (isPulled) {
-    // reset: clear the animations and restore the starting state
-    [liftSetup, liftPull].forEach((img) => img.getAnimations().forEach((a) => a.cancel()));
+
+    [liftSetup, liftPull].forEach((img) =>
+      img.getAnimations().forEach((a) => a.cancel())
+    );
+
     liftSetup.style.opacity = "1";
     liftPull.style.opacity = "0";
-    liftMessage.textContent = "Bar is loaded. Chalk up...";
     liftButton.textContent = "Pull the bar";
+
     isPulled = false;
     isBusy = false;
     return;
   }
- 
-  liftMessage.textContent = "Drive through the floor!";
- 
-  // fade out the setup photo
+
   await liftSetup.animate(
     [{ opacity: 1 }, { opacity: 0 }],
     { duration: 700, easing: "ease-in-out", fill: "forwards" }
   ).finished;
- 
+
   liftPull.style.opacity = "1";
   liftButton.textContent = "Reset";
- 
-  // the pull: the photo pops up with a little overshoot
+
   await liftPull.animate(
     [
       { transform: "scale(0.8) translateY(50px)", opacity: 0 },
@@ -73,16 +71,14 @@ async function toggleLift() {
     ],
     { duration: 1000, easing: "ease-out" }
   ).finished;
- 
-  liftMessage.textContent = "Bar is moving. Keep pulling!";
+
   isPulled = true;
   isBusy = false;
 }
- 
+
 liftButton.addEventListener("click", toggleLift);
 liftSetup.addEventListener("click", toggleLift);
 
-// 5. Plate animations: each button names a plate and an animate.css effect
 document.querySelectorAll("[data-plate]").forEach((button) => {
   button.addEventListener("click", () => {
     const plate = document.getElementById(button.dataset.plate);
